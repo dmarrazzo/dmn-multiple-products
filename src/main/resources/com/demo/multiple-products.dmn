@@ -12,10 +12,10 @@
   <dmn:itemDefinition id="_322A1FE9-B2F4-48A0-A3EA-1F19DBC63357" name="tBasket" isCollection="true">
     <dmn:typeRef>tProduct</dmn:typeRef>
   </dmn:itemDefinition>
-  <dmn:businessKnowledgeModel id="_D08EC276-60F5-4C7A-BF52-81417D2D9F67" name="core points">
+  <dmn:businessKnowledgeModel id="_D08EC276-60F5-4C7A-BF52-81417D2D9F67" name="core configuration">
     <dmn:description>priority on the product</dmn:description>
     <dmn:extensionElements/>
-    <dmn:variable id="_A255A3B4-FDF7-4A44-ACD3-43E66BCD772F" name="core points" typeRef="number"/>
+    <dmn:variable id="_A255A3B4-FDF7-4A44-ACD3-43E66BCD772F" name="core configuration" typeRef="number"/>
     <dmn:encapsulatedLogic id="_BEB1B199-41F9-4E6D-89F7-24E90474D3BE" kind="FEEL">
       <dmn:formalParameter id="_90EC2469-BA8B-402F-8F2C-656D2EBE7B7E" name="category" typeRef="string"/>
       <dmn:decisionTable id="_3F566A79-B48E-4084-8189-DC942536EC61" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
@@ -64,9 +64,32 @@
     <dmn:extensionElements/>
     <dmn:variable id="_1CEFAFE7-95EC-4BA9-8A22-91D2C0B4FC24" name="basket" typeRef="tBasket"/>
   </dmn:inputData>
-  <dmn:decision id="_FFF068DE-076E-4304-9119-AADD321FDDEB" name="points">
+  <dmn:decision id="_8D3FDBEE-F770-4AB3-BFC1-8A7E90AB3B78" name="points">
     <dmn:extensionElements/>
-    <dmn:variable id="_C7DD5FE1-0B78-46F3-92E3-819C5294203E" name="points" typeRef="number"/>
+    <dmn:variable id="_CEFDD341-EF86-4FD2-9B58-8B4663C905CB" name="points"/>
+    <dmn:informationRequirement id="_0793D59F-8E7E-48BB-8FB2-025DBDF0F37F">
+      <dmn:requiredDecision href="#_FFF068DE-076E-4304-9119-AADD321FDDEB"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_B10EDE70-2B51-4FA0-8480-D6817B7A861F">
+      <dmn:requiredInput href="#_97642BCB-E9E2-46D6-9A0B-AA9B9F1D923E"/>
+    </dmn:informationRequirement>
+    <dmn:context id="_1EAE145C-F16F-4E2B-B701-21768041B6BC">
+      <dmn:contextEntry>
+        <dmn:variable id="_9DE2C68B-D736-48FF-8CF9-F757D0429F81" name="points list"/>
+        <dmn:literalExpression id="_A8F674FF-A2D5-4F19-8B8D-D3A807FC7976">
+          <dmn:text>for product in basket return product.price * configuration</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:literalExpression id="_031BAC68-D2D2-4DA1-8D48-CCC9AE53EF94">
+          <dmn:text>sum (points list)</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+    </dmn:context>
+  </dmn:decision>
+  <dmn:decision id="_FFF068DE-076E-4304-9119-AADD321FDDEB" name="configuration">
+    <dmn:extensionElements/>
+    <dmn:variable id="_C7DD5FE1-0B78-46F3-92E3-819C5294203E" name="configuration" typeRef="number"/>
     <dmn:informationRequirement id="_F09291ED-0AA5-4A9C-9F96-EB62BE15C161">
       <dmn:requiredInput href="#_97642BCB-E9E2-46D6-9A0B-AA9B9F1D923E"/>
     </dmn:informationRequirement>
@@ -88,7 +111,7 @@
           <dmn:text>list contains( ?, "A") </dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_D39FB93A-FB72-4120-8345-1AB6281D35E0">
-          <dmn:text>core points("A")</dmn:text>
+          <dmn:text>core configuration("A")</dmn:text>
         </dmn:outputEntry>
       </dmn:rule>
       <dmn:rule id="_54CE4D5C-5BA8-4387-A366-0BA240097ACD">
@@ -96,7 +119,7 @@
           <dmn:text>list contains( ?, "B")</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_5118CE7C-A5E8-4F99-8B1B-9C02F9FB140C">
-          <dmn:text>core points("B")</dmn:text>
+          <dmn:text>core configuration("B")</dmn:text>
         </dmn:outputEntry>
       </dmn:rule>
       <dmn:rule id="_B978A923-4DC4-425E-9D20-6020D3A63E33">
@@ -104,7 +127,7 @@
           <dmn:text>list contains( ?, "C")</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_878D2E04-C636-4E4B-9DB5-951FE917E5A5">
-          <dmn:text>core points("C")</dmn:text>
+          <dmn:text>core configuration("C")</dmn:text>
         </dmn:outputEntry>
       </dmn:rule>
       <dmn:rule id="_305A082B-B8B4-43BE-A525-117809EFBEE5">
@@ -112,7 +135,7 @@
           <dmn:text>list contains( ?, "D")</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_982FE13E-AE3A-4852-BE85-9870BD5BEAF1">
-          <dmn:text>core points("D")</dmn:text>
+          <dmn:text>core configuration("D")</dmn:text>
         </dmn:outputEntry>
       </dmn:rule>
       <dmn:rule id="_B7367FD3-46B6-4AFF-908C-3072384BFED6">
@@ -120,14 +143,14 @@
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_F6B4E496-1E36-47D6-B1A1-C21375A031C9">
-          <dmn:text>ancillary points(basket)</dmn:text>
+          <dmn:text>ancillary configuration(basket)</dmn:text>
         </dmn:outputEntry>
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:businessKnowledgeModel id="_6A97D99E-ED3F-4EEF-904D-F97AB6DD8A2F" name="ancillary points">
+  <dmn:businessKnowledgeModel id="_6A97D99E-ED3F-4EEF-904D-F97AB6DD8A2F" name="ancillary configuration">
     <dmn:extensionElements/>
-    <dmn:variable id="_3AC677B8-C52B-4D4A-AD0C-B4934A14ED75" name="ancillary points" typeRef="number"/>
+    <dmn:variable id="_3AC677B8-C52B-4D4A-AD0C-B4934A14ED75" name="ancillary configuration" typeRef="number"/>
     <dmn:encapsulatedLogic id="_0AE70C38-C8D7-4B06-957B-3E8DB9DA5C78" kind="FEEL">
       <dmn:formalParameter id="_6C5FD821-3B63-4942-B028-91D273D94361" name="basket" typeRef="tBasket"/>
       <dmn:context id="_B9AB0AA3-5B18-4EBB-B9F2-AC34FF5E8656">
@@ -178,6 +201,17 @@
     <dmndi:DMNDiagram>
       <di:extension>
         <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_1EAE145C-F16F-4E2B-B701-21768041B6BC">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>630.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_A8F674FF-A2D5-4F19-8B8D-D3A807FC7976">
+            <kie:width>630.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_031BAC68-D2D2-4DA1-8D48-CCC9AE53EF94">
+            <kie:width>630.0</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_3F566A79-B48E-4084-8189-DC942536EC61">
             <kie:width>50.0</kie:width>
             <kie:width>177.0</kie:width>
@@ -190,8 +224,8 @@
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_D5E6396C-34AE-4103-99E0-8BBC6B1B90C4">
             <kie:width>50.0</kie:width>
-            <kie:width>377.0</kie:width>
-            <kie:width>233.0</kie:width>
+            <kie:width>226.0</kie:width>
+            <kie:width>284.0</kie:width>
             <kie:width>100.0</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_B9AB0AA3-5B18-4EBB-B9F2-AC34FF5E8656">
@@ -214,6 +248,15 @@
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
+      <dmndi:DMNShape id="dmnshape-_8D3FDBEE-F770-4AB3-BFC1-8A7E90AB3B78" dmnElementRef="_8D3FDBEE-F770-4AB3-BFC1-8A7E90AB3B78" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="682" y="208" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_D08EC276-60F5-4C7A-BF52-81417D2D9F67" dmnElementRef="_D08EC276-60F5-4C7A-BF52-81417D2D9F67" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
@@ -250,6 +293,14 @@
         <dc:Bounds x="321" y="263" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_0793D59F-8E7E-48BB-8FB2-025DBDF0F37F" dmnElementRef="_0793D59F-8E7E-48BB-8FB2-025DBDF0F37F">
+        <di:waypoint x="621" y="233"/>
+        <di:waypoint x="682" y="233"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-_B10EDE70-2B51-4FA0-8480-D6817B7A861F" dmnElementRef="_B10EDE70-2B51-4FA0-8480-D6817B7A861F">
+        <di:waypoint x="570" y="333"/>
+        <di:waypoint x="732" y="258"/>
+      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_F09291ED-0AA5-4A9C-9F96-EB62BE15C161" dmnElementRef="_F09291ED-0AA5-4A9C-9F96-EB62BE15C161">
         <di:waypoint x="570" y="333"/>
         <di:waypoint x="571" y="258"/>

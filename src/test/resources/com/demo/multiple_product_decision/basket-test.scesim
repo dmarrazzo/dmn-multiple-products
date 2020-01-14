@@ -52,18 +52,36 @@
         <FactMapping>
           <expressionElements>
             <ExpressionElement>
+              <step>configuration</step>
+            </ExpressionElement>
+          </expressionElements>
+          <expressionIdentifier>
+            <name>1578997931718</name>
+            <type>EXPECT</type>
+          </expressionIdentifier>
+          <factIdentifier>
+            <name>configuration</name>
+            <className>.configuration</className>
+          </factIdentifier>
+          <className>number</className>
+          <factAlias>configuration</factAlias>
+          <expressionAlias>value</expressionAlias>
+        </FactMapping>
+        <FactMapping>
+          <expressionElements>
+            <ExpressionElement>
               <step>points</step>
             </ExpressionElement>
           </expressionElements>
           <expressionIdentifier>
-            <name>1578996377237</name>
+            <name>1578998473990</name>
             <type>EXPECT</type>
           </expressionIdentifier>
           <factIdentifier>
             <name>points</name>
             <className>.points</className>
           </factIdentifier>
-          <className>number</className>
+          <className>Any</className>
           <factAlias>points</factAlias>
           <expressionAlias>value</expressionAlias>
         </FactMapping>
@@ -113,14 +131,25 @@
           </FactMappingValue>
           <FactMappingValue>
             <factIdentifier>
+              <name>configuration</name>
+              <className>.configuration</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1578997931718</name>
+              <type>EXPECT</type>
+            </expressionIdentifier>
+            <rawValue class="string">10</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
               <name>points</name>
               <className>.points</className>
             </factIdentifier>
             <expressionIdentifier>
-              <name>1578996377237</name>
+              <name>1578998473990</name>
               <type>EXPECT</type>
             </expressionIdentifier>
-            <rawValue class="string">10</rawValue>
+            <rawValue class="string">220</rawValue>
           </FactMappingValue>
         </factMappingValues>
       </Scenario>
@@ -161,14 +190,25 @@
           </FactMappingValue>
           <FactMappingValue>
             <factIdentifier>
+              <name>configuration</name>
+              <className>.configuration</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1578997931718</name>
+              <type>EXPECT</type>
+            </expressionIdentifier>
+            <rawValue class="string">8</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
               <name>points</name>
               <className>.points</className>
             </factIdentifier>
             <expressionIdentifier>
-              <name>1578996377237</name>
+              <name>1578998473990</name>
               <type>EXPECT</type>
             </expressionIdentifier>
-            <rawValue class="string">8</rawValue>
+            <rawValue class="string">176</rawValue>
           </FactMappingValue>
         </factMappingValues>
       </Scenario>
@@ -198,17 +238,6 @@
           </FactMappingValue>
           <FactMappingValue>
             <factIdentifier>
-              <name>points</name>
-              <className>.points</className>
-            </factIdentifier>
-            <expressionIdentifier>
-              <name>1578996377237</name>
-              <type>EXPECT</type>
-            </expressionIdentifier>
-            <rawValue class="string">3</rawValue>
-          </FactMappingValue>
-          <FactMappingValue>
-            <factIdentifier>
               <name>#</name>
               <className>java.lang.Integer</className>
             </factIdentifier>
@@ -217,6 +246,28 @@
               <type>OTHER</type>
             </expressionIdentifier>
             <rawValue class="string">3</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>configuration</name>
+              <className>.configuration</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1578997931718</name>
+              <type>EXPECT</type>
+            </expressionIdentifier>
+            <rawValue class="string">3</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>points</name>
+              <className>.points</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1578998473990</name>
+              <type>EXPECT</type>
+            </expressionIdentifier>
+            <rawValue class="string">150</rawValue>
           </FactMappingValue>
         </factMappingValues>
       </Scenario>
@@ -246,17 +297,6 @@
           </FactMappingValue>
           <FactMappingValue>
             <factIdentifier>
-              <name>points</name>
-              <className>.points</className>
-            </factIdentifier>
-            <expressionIdentifier>
-              <name>1578996377237</name>
-              <type>EXPECT</type>
-            </expressionIdentifier>
-            <rawValue class="string">8</rawValue>
-          </FactMappingValue>
-          <FactMappingValue>
-            <factIdentifier>
               <name>#</name>
               <className>java.lang.Integer</className>
             </factIdentifier>
@@ -265,6 +305,28 @@
               <type>OTHER</type>
             </expressionIdentifier>
             <rawValue class="string">4</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>configuration</name>
+              <className>.configuration</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1578997931718</name>
+              <type>EXPECT</type>
+            </expressionIdentifier>
+            <rawValue class="string">8</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>points</name>
+              <className>.points</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1578998473990</name>
+              <type>EXPECT</type>
+            </expressionIdentifier>
+            <rawValue class="string">480</rawValue>
           </FactMappingValue>
         </factMappingValues>
       </Scenario>
